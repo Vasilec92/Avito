@@ -22,14 +22,19 @@ modalAdd.addEventListener('click', (event) =>{
 });
 
 catalog.addEventListener('click', (event)=>{
-    modalItem.classList.remove('hide');   
+    const target = event.target;
+    console.log(target);
+    if (target.classList.contains('card__image')){
+    modalItem.classList.remove('hide');
+    }   
 });
 
 modalItem.addEventListener('click', (event) =>{
     const target = event.target;
-    console.log(target);
     if (target === modalItem || target.closest('.modal__close')){
         modalItem.classList.add('hide');
     }
 });
+
+
 
